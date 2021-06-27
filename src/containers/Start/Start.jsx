@@ -1,10 +1,12 @@
-import Welcome from "../../components/welcome";
-import Search from "../../components/search";
+import Welcome from "../../components/Welcome";
+import Search from "../../components/Search";
+import styles from "./Start.module.scss";
+
 
 const Start = () => {
     return (
         <main>
-            <article>
+            <article className={styles.Start}>
                 <Welcome />
                 <Search />
             </article>
@@ -12,4 +14,4 @@ const Start = () => {
     );
 };
 
-export default Start;
+export default Start; 

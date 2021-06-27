@@ -1,21 +1,28 @@
-const callAPI = async () => {
+// import { useState } from "react";
+
+const Search = ({ getQuery }) => {
+    // const [text, setText] = useState('')
+    // const onChange = (q) => {
+    //     setText(q)
+    //     getQuery(q)
+    // }
     
-}
-//with google api, q: input
-// https://www.googleapis.com/books/v1/volumes?q={search terms}
-//https://www.googleapis.com/books/v1/volumes?q=input - input from above are the search terms
-
-
-const Search = () => {
     return (
         <section>
-            {/* button needed if not dynamic */}
-            <input class="search-input" placeholder="Search here"></input>
-            {/* render search results to "book" component */}
+            <form>
+                <input 
+                    type="text" 
+                    className="search-input" placeholder="Search here"
+                    // value={text}
+                    // onChange={(e) => onChange(e.target.value)}
+                    // autoFocus
+                    >
+                </input>
+            </form>
         </section>
     );
 };
 
-
+// const searchInput = document.querySelector(".search-input");
 
 export default Search;

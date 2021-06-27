@@ -1,24 +1,19 @@
-// import logo from './logo.svg';
 import './App.css';
-
+import GetData from './components/GetData';
+// import Results from './containers/Results';
 import Start from "./containers/Start";
-
-
-const Header = () => {
-    return (
-        <header>
-
-        </header>
-    );
-};
+import styles from "./App.module.scss";
 
 const App = () => {
     return (
         <>
-            <Header />
             <Start />
+            <article className={styles.App}>
+                <GetData />
+            </article>
         </>
     );
 };
 
 export default App;
+
