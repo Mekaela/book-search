@@ -1,30 +1,27 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import Results from "../../containers/Results";
-
-
+import Search from "../../components/Search";
 
 const GetData = () => {
     const [items, setItems] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [query, setQuery] = useState('');
 
     useEffect (() => {
         const fetchItems = async () => {
             setIsLoading(true);
-            const result = await axios('https://books.googleapis.com/books/v1/volumes?q=string&maxResults=20'
+            const result = await axios(`https://books.googleapis.com/books/v1/volumes?q=${query}&maxResults=18`
             );
-            // console.log(result.data.items);
             setItems(result.data.items);
             setIsLoading(false);
-            // console.log(isLoading);
-            //only logs the first time:
-            // console.log(items);
         }
         fetchItems();
-    }, []);
+    }, [query]);
     // console.log(items);
     return (
         <>
+            <Search getQuery={(q) => setQuery(q)}/>
             <Results isLoading={isLoading} items={items} />
         </>
     )

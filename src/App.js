@@ -10,6 +10,7 @@ const App = () => {
             <Start />
             <article className={styles.App}>
                 <GetData />
+                {/* <Results items={GetData.items} isLoading={GetData.isLoading} /> */}
             </article>
         </>
     );
