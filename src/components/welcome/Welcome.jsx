@@ -1,9 +1,11 @@
+import styles from './Welcome.module.scss';
+
 const Welcome = () => {
     return (
         <section>
-            <h3>Welcome to Book Search</h3>
-            <p>
-                You can use this page to search for books
+            <h1 className={styles.Header}>Welcome to Book Search</h1>
+            <p className={styles.SubHeader}>
+                Search your favourite books!
             </p>
         </section>
     );

@@ -4,8 +4,8 @@ const Book = ({ item }) => {
 
     return (
         <section className={styles.Book}>
-            <h2>{item.volumeInfo.title}</h2>
-            {/* <img src={item.volumeInfo.imageLinks.smallThumbnail} alt='' /> */}
+            <a className={styles.Book__title} href={item.volumeInfo?.previewLink}>{item.volumeInfo.title}</a>
+            <img src={item.volumeInfo?.imageLinks?.smallThumbnail} alt='book cover unavailable' />
             <p>{item.volumeInfo.authors}</p>
             <p>{item.volumeInfo.description}</p>
         </section>

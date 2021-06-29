@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from './Search.module.scss';
 
 const Search = ({ getQuery }) => {
     const [text, setText] = useState('')
@@ -9,20 +10,22 @@ const Search = ({ getQuery }) => {
     
     return (
         <section>
-            <form>
+            <form className={styles.Search}>
                 <input 
                     type="text" 
-                    className="search-input" placeholder="Search here"
+                    className={styles.Search__input} placeholder="Search here"
                     value={text}
                     onChange={(e) => onChange(e.target.value)}
                     autoFocus
                     >
                 </input>
+                {/* <button 
+                    className={styles.Search__button}
+                    onClick={}>
+                        Search</button> */}
             </form>
         </section>
     );
 };
-
-// const searchInput = document.querySelector(".search-input");
 
 export default Search;

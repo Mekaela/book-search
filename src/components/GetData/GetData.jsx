@@ -1,3 +1,4 @@
+import styles from "./GetData.module.scss";
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import Results from "../../containers/Results";
@@ -18,33 +19,17 @@ const GetData = () => {
         }
         fetchItems();
     }, [query]);
-    // console.log(items);
+
     return (
         <>
-            <Search getQuery={(q) => setQuery(q)}/>
-            <Results isLoading={isLoading} items={items} />
+            <div className={styles.Search}>
+                <Search getQuery={(q) => setQuery(q)}/>
+            </div>
+            <article className={styles.App}>
+                <Results isLoading={isLoading} items={items} /> 
+            </article>
         </>
     )
 }
-
-// return fetch("'https://books.googleapis.com/books/v1/volumes?q={searchTerm}&maxResults=20'")
-
-
-//from the API I need: an image, author, title and description
-//"volumeInfo": {
-    // "title": "The Invisible String",
-    //x.items[i].volumeInfo.title
-    // "authors": [
-    //   "Patrice Karst"
-    // ],
-    // x.items[i].volumeInfo.authors
-    //"description":
-    //x.items[i].volumeInfo.description;
-    // "imageLinks": {
-    //     "smallThumbnail": "http://books.google.com/books/content?id=9STVDQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-    //     "thumbnail": "http://books.google.com/books/content?id=9STVDQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    //   },
-    //x.items[i].imageLinks.smallThumbnail
-
 
     export default GetData;

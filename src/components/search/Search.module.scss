@@ -1,0 +1,24 @@
+.Search {
+    margin-left: 15.2%;
+    padding-bottom: 50px;
+    &__input {
+        min-width: 300px;
+        min-height: 30px;
+        font-size: large;
+        border-radius: 5px;
+        border: 1px solid transparent;
+    }
+    &__button {
+        min-height: 35px;
+        width: 90px;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 5px;
+        border: 1px solid transparent;
+        color: white;
+        background-color: rgba(0, 0, 128, 0.753);
+        &:hover {
+            background-color: navy;
+        }
+    }
+}
