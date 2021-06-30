@@ -1,29 +1,33 @@
 import { useState } from "react";
 import styles from './Search.module.scss';
 
-const Search = ({ getQuery }) => {
+const Search = ({ onSubmit }) => {
     const [text, setText] = useState('')
-    const onChange = (q) => {
-        setText(q)
-        getQuery(q)
+
+    const handleChange = (q) => setText(q.target.value);
+    
+
+    const handleClick = (q) => {
+        onSubmit(text);
     }
     
     return (
         <section>
-            <form className={styles.Search}>
+            <div className={styles.Search}>
                 <input 
                     type="text" 
-                    className={styles.Search__input} placeholder="Search here"
+                    className={styles.Search__input} 
+                    placeholder="Search here"
                     value={text}
-                    onChange={(e) => onChange(e.target.value)}
-                    autoFocus
+                    onChange={handleChange}
                     >
                 </input>
-                {/* <button 
+                <button 
                     className={styles.Search__button}
-                    onClick={}>
-                        Search</button> */}
-            </form>
+                    onClick={handleClick}
+                    >
+                        Search</button>
+            </div>
         </section>
     );
 };

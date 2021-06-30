@@ -9,9 +9,12 @@ const GetData = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [query, setQuery] = useState('');
 
+    // console.log(items);
+
     useEffect (() => {
         const fetchItems = async () => {
             setIsLoading(true);
+            //the search string is not being put in to {query};
             const result = await axios(`https://books.googleapis.com/books/v1/volumes?q=${query}&maxResults=18`
             );
             setItems(result.data.items);
@@ -19,11 +22,17 @@ const GetData = () => {
         }
         fetchItems();
     }, [query]);
+    console.log(items);
+
+    const handleSearchChange = (searchString) => {
+            setQuery(searchString);
+            console.log(query)
+        };
 
     return (
         <>
             <div className={styles.Search}>
-                <Search getQuery={(q) => setQuery(q)}/>
+                <Search onSubmit={handleSearchChange}/>
             </div>
             <article className={styles.App}>
                 <Results isLoading={isLoading} items={items} /> 
