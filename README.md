@@ -1,3 +1,10 @@
+#book-search
+
+A book search which can search through the Google Books API and return a list of results. 
+
+This project was made with React and used the Google books API. 
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
